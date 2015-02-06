@@ -16,6 +16,10 @@ h2, h3 {
 p {
     line-height: 1.6em;
 }
+span {
+    display: inline-block;
+    margin-right: 1rem;
+}
 /*
  * -- Layout Styles --
  */
@@ -277,12 +281,14 @@ p {
  */
 
 @media(min-width: 767px) {
+
     .circle {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
 .information {
     padding: 0;
+    
     margin-bottom: 3rem;
 }
 .info-content {
