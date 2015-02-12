@@ -12,7 +12,7 @@ body {
     color: #526066;
     /*background-color: #E0F7FA;*/
     
-    font-family: 'Kozuka Gothic Pr6N','RobotoDraft', 'Droid Sans Fallback', 'Microsoft JhengHei', sans-serif;
+    font-family: 'RobotoDraft','Microsoft JhengHei','Heiti TC', 'Droid Sans', 'sans-serif';
 }
 h2, h3 {
     letter-spacing: 0.25rem;
@@ -40,20 +40,10 @@ span {
 .l-box {
     padding: 0.5em 2em;
 }
-/*
- * -- MENU STYLES --
- * Make the menu have a very faint box-shadow.
- */
 
 .pure-menu {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
 }
-/*
- * -- BANNER --
- * The top banner with the headings. By using a combination
- * of `display: table;` and `display: table-cell;`, we can
- * vertically center the text.
- */
 
 #productName {
     position: absolute;
@@ -77,10 +67,6 @@ span {
     margin-bottom: 3rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
-/*
- * -- PRICING TABLE WRAPPER --
- * This element wraps up all the pricing table elements
- */
 
 .pricing-tables, .information {
     max-width: 980px;
@@ -91,21 +77,13 @@ span {
     margin-bottom: 3.125em;
     text-align: center;
 }
-/*
- * -- PRICING TABLE  --
- * Every pricing table has the .pricing-table class
- */
 
 .pricing-table {
-    font-family: 'RobotoDraft', 'Droid Sans Fallback', 'Microsoft JhengHei', sans-serif;
+    font-family: 'RobotoDraft','Microsoft JhengHei','Heiti TC', 'Droid Sans', 'sans-serif';
     border: 1px solid #ddd;
     margin: 0 0.5rem 5rem;
-    /*padding: 0 0 3em;*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
-/*
- * -- PRICING TABLE HEADER COLORS --
- * Choose a different color based on the type of pricing table.
- */
 
 .pricing-table-free .pricing-table-header {
     background: #66BB6A;
@@ -113,10 +91,6 @@ span {
 .pricing-table-full .pricing-table-header {
     background: #00695C;
 }
-/*
- * -- PRICING TABLE HEADER --
- * By default, a header is black/white, and has some styles for its <h2> name.
- */
 
 .pricing-table-header {
     background: #111;
@@ -128,10 +102,6 @@ span {
     font-size: 1rem;
     font-weight: normal;
 }
-/*
- * -- PRICING TABLE PRICE --
- * Styles for the price and the corresponding <span>per month</span>
- */
 
 .pricing-table-price {
     line-height: 8rem;
@@ -150,32 +120,19 @@ span {
     color: rgba(255, 255, 255, 0.5);
     *color: #fff;
 }
-/*
- * -- PRICING TABLE LIST --
- * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
- */
-
 .pricing-table-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
 }
-/*
- * -- PRICING TABLE LIST ELEMENTS --
- * Styles for the individual list elements within each pricing table
- */
 
 .pricing-table-list li {
     padding: 0.8em 0;
     background: #f7f7f7;
     border-bottom: 1px solid #e7e7e7;
 }
-/*
- * -- PRICING TABLE BUTTON --
- * Styles for the "Choose" button at the bottom of a pricing table.
- * This inherits from Pure Button.
- */
+
 
 .re {
     height: 100%;
@@ -216,7 +173,7 @@ span {
 .info-content {
     width: 100%;
     text-align: center;
-    font-family: 'RobotoDraft', 'Droid Sans Fallback', 'Microsoft JhengHei', sans-serif;
+    font-family: 'RobotoDraft','Microsoft JhengHei','Heiti TC', 'Droid Sans', 'sans-serif';
     font-size: 1.5rem;
     margin-bottom: 4rem;
 }
@@ -224,7 +181,7 @@ span {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    font-family: 'RobotoDraft', 'Droid Sans Fallback', 'Microsoft JhengHei', sans-serif;
+    font-family: 'RobotoDraft','Microsoft JhengHei','Heiti TC', 'Droid Sans', 'sans-serif';
     font-size: 5rem;
 }
 .circle {
@@ -268,7 +225,7 @@ span {
     display: block;
     position: absolute;
     margin: 0px auto; left: 0; right: 0;
-    top: 1.3rem;
+    top: 1.7rem;
     z-index: 1;
 }
 #banner-head {
@@ -278,8 +235,6 @@ span {
     z-index: 2;
     text-align: center;
     padding-top: 10rem;
-    /*padding: 10rem 0 3rem 0;*/
-
     font-weight: bold;
     font-size: 4rem;
     color: white;
@@ -346,11 +301,5 @@ span {
         margin: 0 2rem;
     }
 }
-/* -- PHONE MEDIA QUERIES -- * On phones, we want to reduce the height and font-size of the banner further */
 
-@media (min-width: 480px) {
-    #banner-head {
-        /*        padding-left: 4vw;*/
-        /*font-size: 3rem;*/
-    }
 }
