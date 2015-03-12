@@ -8,5 +8,5 @@ img: "/img/lisfe-studio-online.png"
 des: "LISFE STUDIO的網站與部落格終於正式上線了!!"
 ---
 <img src="/img/lisfe-studio-online.png">
-LISFE STUDIO的網站與部落格終於正式上線了!!
+LISFE STUDIO的網站與部落格終於正式上線了!!!
 我們會努力用我們的程式，滿足生活的需求，讓生活更便利
