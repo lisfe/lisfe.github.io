@@ -87,9 +87,9 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-sans-serif: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-serif: "Microsoft JhengHei", Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-monospace: "Microsoft JhengHei", Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
 // $font-weight-normal: normal;
@@ -101,7 +101,7 @@ $include-html-global-classes: $include-html-classes;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
+ $smoke       : #EEEEEE;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
@@ -112,20 +112,48 @@ $include-html-global-classes: $include-html-classes;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
 // $oil         : #333333;
-// $jet         : #222222;
+$jet         : #222222;
 // $black       : #000000;
 
+// lisfe color theme
+
+
+$lisfe-primary-0 : #2FA2BD;	/* Main Primary color */
+$lisfe-primary-1 : #B4DAE3;
+$lisfe-primary-2 : #5EB4C8;
+$lisfe-primary-3 : #049CC0;
+$lisfe-primary-4 : #026E88;
+
+$lisfe-secondary-1-0 : #FFC33A ;	/* Main Secondary color (1) */
+$lisfe-secondary-1-1 : #FFEEC8 ;
+$lisfe-secondary-1-2 : #FFD574 ;
+$lisfe-secondary-1-3 : #FFB100 ;
+$lisfe-secondary-1-4 : #DB9800 ;
+
+$lisfe-secondary-2-0 : #FF513A ;	/* Main Secondary color (2) */
+$lisfe-secondary-2-1 : #FFCFC8 ;
+$lisfe-secondary-2-2 : #FF8474 ;
+$lisfe-secondary-2-3 : #FF1E00 ;
+$lisfe-secondary-2-4 : #DB1900 ;
+
+$lisfe-dark: #015265;
+
+$lisfe-bg-color: $lisfe-dark;
+$lisfe-nav-color: $lisfe-dark;
+
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$primary-color: $lisfe-primary-0;
+$secondary-color: $lisfe-secondary-1-2;
+$alert-color: $lisfe-secondary-2-0;
+$success-color: $lisfe-secondary-1-0;
+$warning-color: $lisfe-secondary-2-0;
+$info-color: $lisfe-primary-3;
+
+
 
 // We use these to control various global styles
-// $body-bg: $white;
-// $body-font-color: $jet;
+$body-bg: $lisfe-bg-color;
+$body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -1382,8 +1410,8 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $lisfe-nav-color;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
@@ -1399,10 +1427,10 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+ $topbar-link-font-size: rem-calc(14);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $oil;
+$topbar-link-bg-hover: $primary-color;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

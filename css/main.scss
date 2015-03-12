@@ -2,33 +2,22 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
-
-
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
+$spacing-unit: 30px;
+$text-color: #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
+$brand-color: #2a7ae2;
+$grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
+$grey-color-dark: darken($grey-color, 25%);
 // Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 // Using media queries with like this:
 // @include media-query($on-palm) {
 //     .wrapper {
@@ -41,27 +30,17 @@ $on-laptop:        800px;
         @content;
     }
 }
-
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 //@import
 //        "base",
 //        "layout",
 //        "syntax-highlighting"
 //;
-
-
 // import fundation 
 @import "normalize";
-
-@import "base";
-@import "layout";
-@import "syntax-highlighting";
-
+//@import "base";@import "layout";@import "syntax-highlighting";
 @import "settings";
 @import "foundation";
-
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -99,4 +78,141 @@ $on-laptop:        800px;
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+/*header{
+	box-shadow: 0px 1px 5px;
+}*/
 
+.banner {
+    //border-bottom: 0.5rem solid #198098;
+    box-shadow: 0rem 0rem 0.5rem;
+}
+.content {
+	min-height: 80vh;
+    padding: 1rem 0;
+    background-color: $lisfe-primary-1;
+    //background: -webkit-linear-gradient(top, $lisfe-secondary-1-1, $lisfe-primary-1);
+    //background: url("http://localhost:4000/img/l-side.png"), -webkit-linear-gradient(top, $lisfe-primary-0, $lisfe-dark);
+    //background-repeat: no-repeat;
+}
+.site-footer {
+    word-wrap: break-word;
+    background-color: $lisfe-dark;
+    padding: 2rem;
+    color: $lisfe-primary-1;
+    a {
+    	color: $lisfe-primary-1;
+    }
+}
+.cat-wrapper {
+    h1 {
+        text-align: center;
+        color: $lisfe-dark;
+        font-weight: normal;
+    }
+}
+.post {
+	.title {
+		padding: 1rem;
+		text-align: center;
+		span {
+			display: inline-block;
+		}
+	}
+	.post-meta {
+		margin-right: 1rem;
+	}
+	.post-share {
+		margin-left: 1rem;
+	}
+	header {
+		overflow: auto;
+	}
+	article {
+		clear: both;
+		overflow: auto;
+		padding: 1rem 2rem;
+		img {
+			margin: 0 auto 1rem auto;
+			display: block;
+			@media #{$medium-up} {
+                float: left;
+                margin-right: 1rem;
+            }
+		}
+	}
+}
+.card {
+	margin: 1rem 0;
+	padding: 1rem;
+    border-radius: 0.3rem;
+    background-color: $lisfe-secondary-1-1;
+    box-shadow: 0rem 0.2rem 0.5rem;
+}
+//$index-block-title-height: 3rem;
+.index-block {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    //border: 0.1rem solid $lisfe-dark;
+    //box-shadow: 0.2rem 0.2rem 1rem $jet;
+    background-color: $lisfe-secondary-1-1;
+    box-shadow: 0rem 0.2rem 0.5rem;
+    h2 {
+        margin: 0;
+        padding: 0.5rem;
+        font-weight: 300;
+        display: inline-block;
+        font-family: "Noto Sans CJK TC";
+        a {
+            color: $jet;
+        }
+    }
+    .post-list {
+        padding: 0 1rem;
+        .post-item {
+            margin: 1rem 0;
+            .post-content {
+                color: $jet;
+                .title {
+                    font-size: 1.2rem;
+                }
+                .bar {
+                    border-bottom: 0.1rem solid $lisfe-primary-4;
+                }
+                .post-meta {
+                }
+                .post-des {
+                	padding-top: 1rem;
+                	clear: both; 
+                }
+            }
+            .post-img-wrap {
+                padding: 0;
+                text-align: center;
+                margin-bottom: 1rem;
+                @media #{$medium-up} {
+                    text-align: right;
+                    margin-bottom: 0;
+                }
+            }
+            .post-img {
+                margin: 0 auto;
+                //width: 5rem;
+                //height: auto;
+            }
+        }
+    }
+    .more {
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+        text-align: right;
+    }
+}
+/*    .tri {
+    	border-radius: 1rem;
+        display: inline-block;
+        vertical-align: bottom;
+        border-width: $index-block-title-height/2;
+        border-style: solid;
+        border-color: transparent $lisfe-primary-4 $lisfe-primary-4 transparent;
+    }*/
