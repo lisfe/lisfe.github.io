@@ -1,32 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://www.lisfestudio.com/jekyll/update/2014/12/23/welcome-to-jekyll.html</loc>
-        <lastmod>2015-03-18T16:59:02+08:00</lastmod>
-    </url>
-    <url>
         <loc>http://www.lisfestudio.com/news/2015/03/12/welcome-to-lisfe-studio.html</loc>
-        <lastmod>2015-03-18T16:59:02+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/about/</loc>
-        <lastmod>2015-03-18T17:04:05+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/blog/</loc>
-        <lastmod>2015-03-18T15:56:28+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/product/</loc>
-        <lastmod>2015-03-18T15:56:28+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/news/</loc>
-        <lastmod>2015-03-18T15:56:28+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/</loc>
-        <lastmod>2015-03-19T14:19:43+08:00</lastmod>
+        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/css/main.css</loc>
