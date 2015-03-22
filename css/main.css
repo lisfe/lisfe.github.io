@@ -1,3 +1,32 @@
+/*
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
+$base-line-height: 1.5;
+$spacing-unit: 30px;
+$text-color: #111;
+$background-color: #fdfdfd;
+$brand-color: #2a7ae2;
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
+// Width of the content area
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -416,10 +445,10 @@ html {
 
 html,
 body {
-  font-size: 16px; }
+  font-size: 100%; }
 
 body {
-  background: #015265;
+  background: #B4DAE3;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -484,7 +513,7 @@ select {
 .row {
   width: 100%;
   margin: 0 auto;
-  max-width: 62.5rem; }
+  max-width: 50rem; }
   .row:before, .row:after {
     content: " ";
     display: table; }
@@ -499,7 +528,7 @@ select {
     margin-right: 0; }
   .row .row {
     width: auto;
-    margin: 0 -0.9375rem;
+    margin: 0 0;
     max-width: none; }
     .row .row:before, .row .row:after {
       content: " ";
@@ -518,8 +547,8 @@ select {
 
 .column,
 .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   float: left; }
 
@@ -653,8 +682,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .small-1 {
@@ -769,8 +798,8 @@ select {
     margin-right: 0; }
   .row.small-uncollapse > .column,
   .row.small-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; } }
 @media only screen and (min-width: 40.0625em) {
   .medium-push-0 {
@@ -896,8 +925,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .medium-1 {
@@ -1012,8 +1041,8 @@ select {
     margin-right: 0; }
   .row.medium-uncollapse > .column,
   .row.medium-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .push-0 {
@@ -1259,8 +1288,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .large-1 {
@@ -1375,8 +1404,8 @@ select {
     margin-right: 0; }
   .row.large-uncollapse > .column,
   .row.large-uncollapse > .columns {
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0;
+    padding-right: 0;
     float: left; }
 
   .push-0 {
@@ -1521,7 +1550,7 @@ select {
         background: #e3e3e3; }
     .accordion .accordion-navigation > .content, .accordion dd > .content {
       display: none;
-      padding: 0.9375rem; }
+      padding: 0; }
       .accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
         display: block;
         background: #FFFFFF; }
@@ -4242,7 +4271,7 @@ ul.pagination {
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal {
       width: 80%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
@@ -4258,35 +4287,35 @@ ul.pagination {
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.tiny {
       width: 30%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.small {
       width: 40%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.medium {
       width: 60%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.large {
       width: 70%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.xlarge {
       width: 95%;
-      max-width: 62.5rem;
+      max-width: 50rem;
       left: 0;
       right: 0;
       margin: 0 auto; } }
@@ -4301,7 +4330,7 @@ ul.pagination {
     @media only screen and (min-width: 40.0625em) {
       .reveal-modal.full {
         width: 100%;
-        max-width: 62.5rem;
+        max-width: 50rem;
         left: 0;
         right: 0;
         margin: 0 auto; } }
@@ -4686,17 +4715,17 @@ table {
   .tabs-content > .content {
     display: none;
     float: left;
-    padding: 0.9375rem 0;
+    padding: 0 0;
     width: 100%; }
     .tabs-content > .content.active {
       display: block;
       float: none; }
     .tabs-content > .content.contained {
-      padding: 0.9375rem; }
+      padding: 0; }
   .tabs-content.vertical {
     display: block; }
     .tabs-content.vertical > .content {
-      padding: 0 0.9375rem; }
+      padding: 0 0; }
 
 @media only screen and (min-width: 40.0625em) {
   .tabs.vertical {
@@ -5172,7 +5201,7 @@ meta.foundation-mq-topbar {
       background: #015265; }
 
   .contain-to-grid .top-bar {
-    max-width: 62.5rem;
+    max-width: 50rem;
     margin: 0 auto;
     margin-bottom: 0; }
 
@@ -5526,7 +5555,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   line-height: 1.4; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-size: 14px;
+    font-size: 60%;
     color: #6f6f6f;
     line-height: 0; }
 
@@ -5574,7 +5603,7 @@ b {
   line-height: inherit; }
 
 small {
-  font-size: 14px;
+  font-size: 60%;
   line-height: inherit; }
 
 code {
@@ -6567,13 +6596,18 @@ th.hide-for-touch {
 /*header{
 	box-shadow: 0px 1px 5px;
 }*/
-.banner {
-  box-shadow: 0rem 0rem 0.5rem; }
-
 .content {
   min-height: 80vh;
-  padding: 1rem 0;
-  background-color: #B4DAE3; }
+  padding: 1rem 0 0 0; }
+  @media only screen and (min-width: 40.0625em) {
+    .content {
+      padding: 0.5rem 0 0 0; } }
+
+.row {
+  margin: 0 auto 1rem auto; }
+  @media only screen and (min-width: 40.0625em) {
+    .row {
+      margin: 0 auto 0.5rem auto; } }
 
 .site-footer {
   word-wrap: break-word;
@@ -6583,46 +6617,38 @@ th.hide-for-touch {
   .site-footer a {
     color: #B4DAE3; }
 
-.cat-wrapper h1 {
-  text-align: center;
-  color: #015265;
-  font-weight: normal; }
+.index-wraper .row:hover .section-title {
+  padding-left: 2rem; }
 
-.post .title {
-  padding: 1rem;
-  text-align: center; }
-  .post .title span {
-    display: inline-block; }
-.post .post-meta {
-  margin-right: 1rem; }
-.post header {
-  overflow: auto; }
-.post article {
-  clear: both;
-  overflow: auto;
-  padding: 1rem 2rem; }
-  .post article img {
-    margin: 0 auto 1rem auto;
-    display: block; }
+.section-title {
+  background-color: #026F88;
+  padding-top: 0.2rem;
+  transition: padding 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
+  @media only screen and (min-width: 40.0625em) {
+    .section-title {
+      border-right: solid 0.5rem #B4DAE3; } }
+  @media only screen and (min-width: 40.0625em) {
+    .section-title {
+      padding-top: 1rem; } }
+  @media only screen and (min-width: 64.0625em) {
+    .section-title {
+      padding-top: 1.5rem; } }
+  .section-title h1 {
+    color: #F9F9F9;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    font-weight: normal; }
     @media only screen and (min-width: 40.0625em) {
-      .post article img {
-        float: left;
-        margin-right: 1rem; } }
-
-.card {
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 0.3rem;
-  background-color: #F9F9F9;
-  box-shadow: 0rem 0.2rem 0.5rem; }
-
-.product img {
-  transition: margin-left 1s cubic-bezier(0.55, 0, 0.1, 1); }
-  .product img:hover {
-    margin-left: 1rem; }
+      .section-title h1 {
+        font-size: 1.8rem; }
+        .section-title h1 span {
+          display: block; } }
+    @media only screen and (min-width: 64.0625em) {
+      .section-title h1 {
+        font-size: 2rem; } }
 
 .index-block {
-  margin: 1rem 0;
   padding: 1rem;
   background-color: #F9F9F9; }
   .index-block h2 {
@@ -6638,6 +6664,7 @@ th.hide-for-touch {
     .index-block .post-list .post-item {
       margin: 1rem 0; }
       .index-block .post-list .post-item .post-content {
+        padding: 0.5rem;
         color: #222222; }
         .index-block .post-list .post-item .post-content .title {
           font-size: 1.2rem; }
@@ -6661,11 +6688,36 @@ th.hide-for-touch {
     margin-right: 1rem;
     text-align: right; }
 
-/*    .tri {
-    	border-radius: 1rem;
-        display: inline-block;
-        vertical-align: bottom;
-        border-width: $index-block-title-height/2;
-        border-style: solid;
-        border-color: transparent $lisfe-primary-4 $lisfe-primary-4 transparent;
-    }*/
+.cat-wrapper .section-title {
+  padding: 1rem 3rem; }
+.cat-wrapper h1 {
+  text-align: center;
+  font-weight: normal; }
+
+.card {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  background-color: #F9F9F9;
+  box-shadow: 0rem 0.2rem 0.5rem; }
+
+.post .title {
+  padding: 1rem;
+  text-align: center; }
+  .post .title span {
+    display: inline-block; }
+.post .post-meta {
+  margin-right: 1rem; }
+.post header {
+  overflow: auto; }
+.post article {
+  clear: both;
+  overflow: auto;
+  padding: 1rem 2rem; }
+  .post article img {
+    margin: 0 auto 1rem auto;
+    display: block; }
+    @media only screen and (min-width: 40.0625em) {
+      .post article img {
+        float: left;
+        margin-right: 1rem; } }
