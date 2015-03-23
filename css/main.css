@@ -6621,7 +6621,7 @@ th.hide-for-touch {
   padding-left: 2rem; }
 
 .section-title {
-  background-color: #026F88;
+  background-color: #026E88;
   padding-top: 0.2rem;
   transition: padding 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
   @media only screen and (min-width: 40.0625em) {
@@ -6701,19 +6701,32 @@ th.hide-for-touch {
   background-color: #F9F9F9;
   box-shadow: 0rem 0.2rem 0.5rem; }
 
+.post .color-content {
+  background-color: #F9F9F9; }
+.post .color-block-4 {
+  background-color: #026E88;
+  color: #F9F9F9; }
+.post .color-block-3 {
+  background-color: #049CC0; }
+.post .color-block-0 {
+  background-color: #2FA2BD; }
+.post .color-block-2 {
+  background-color: #5EB4C8; }
+.post .color-block-1 {
+  background-color: #B4DAE3; }
 .post .title {
-  padding: 1rem;
-  text-align: center; }
+  color: #F9F9F9;
+  text-align: center;
+  margin: 0; }
   .post .title span {
     display: inline-block; }
-.post .post-meta {
-  margin-right: 1rem; }
 .post header {
-  overflow: auto; }
+  padding: 1rem; }
 .post article {
-  clear: both;
   overflow: auto;
-  padding: 1rem 2rem; }
+  padding: 2rem 3rem; }
+  .post article p {
+    font-size: 1.2rem; }
   .post article img {
     margin: 0 auto 1rem auto;
     display: block; }
