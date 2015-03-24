@@ -6672,7 +6672,8 @@ th.hide-for-touch {
           border-bottom: 0.1rem solid #026E88; }
         .index-block .post-list .post-item .post-content .post-des {
           padding-top: 1rem;
-          clear: both; }
+          clear: both;
+          letter-spacing: 1px; }
       .index-block .post-list .post-item .post-img-wrap {
         padding: 0;
         text-align: center;
@@ -6725,8 +6726,13 @@ th.hide-for-touch {
 .post article {
   overflow: auto;
   padding: 2rem 3rem; }
+  .post article h3 {
+    font-weight: bold;
+    font-size: 1.5rem; }
   .post article p {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 1px; }
   .post article img {
     margin: 0 auto 1rem auto;
     display: block; }
