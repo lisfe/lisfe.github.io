@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-TW">
+<html lang="zh-Hant-TW" ng-app="oortiApp">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,114 +9,103 @@
     <meta name="description" content="LISFESTUDIO有著許多關於前端技術與資料呈現的筆記與分享， 也包含了一些實驗性的新想法
 ">
     <link rel="stylesheet" href="/css/main.css">
-
     <!-- add foundation by lisfe-->
     <script src="/js/vendor/modernizr.js"></script>
     <link rel="canonical" href="http://www.lisfestudio.com/oorti_prototype.html">
     <link rel="alternate" type="application/atom+xml" title="LISFESTUDIO" href="http://www.lisfestudio.com /feed.xml " />
-
+    <!-- add angularJS by lisfe>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script-->
+    <script type="text/javascript" src="/js/angular.js"></script>
 </head>
 
+<body class="oorti" ng-controller="oortiCtrl">
+    <div class="row">
+        <div class="columns medium-4">
+        	<div class="small-region row">
+        	<h2 class="region-title columns small-1">關注事件</h2>
+        	<div class="event-table columns small-11">
+                <div class="event-canvas">
+                    <div class="news-event-s" ng-repeat="newsEvent in newsEvents">
+                        <a href="{[{ newsEvent.link }]}">
+                            <div class="news-title">
+                                {[{newsEvent.title}]}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        	</div>
+        	<div class="small-region row">
+        	<h2 class="region-title columns small-1">最近關心</h2>
+        	<div class="event-table columns small-11">
+                <div class="event-canvas">
+                    <div class="news-event-s" ng-repeat="newsEvent in newsEvents">
+                        <a href="{[{ newsEvent.link }]}">
+                            <div class="news-title">
+                                {[{newsEvent.title}]}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        	</div>
 
-<body class="oorti"> 
-    <header class="fixed">
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="/">LISFESTUDIO</a></h1>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone 
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-            </li>
-            -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a>
-            </li>
-        </ul>
-
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li><a href="/">首頁</a>
-                </li>
-                <li><a href="/news/">新消息</a>
-                </li>
-                <!--li><a href="/product/">產品</a>
-                </li-->
-                <li><a href="/blog/">部落格</a>
-                </li>
-                <!--li><a href="/about.html">關於我們</a>
-                </li-->
-            </ul>
-
-            <!-- Left Nav Section 
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-
-    </ul>-->
-        </section>
-    </nav>
-
-
-</header>
-
-
-    <div class="event-table">
-    	<div class="ruler">
-    		<span class="time-block">
+        </div>
+        <div class="columns medium-8 today">
+        	<h2>今日事件</h2>
+            <div class="event-table">
+                <!--div class="ruler">
+                    <span class="time-block">
     			今天
     		</span><span class="time-block lb">
     			本週
     		</span><span class="time-block lb">
     			上週
     		</span>
-    	</div>
-    	<div class="event-canvas">
-	    	<div class="news-event" style="left: 1rem; top:4rem;">
-	    		<a href="/oorti_event_prototype.html">
-		    		<div class="news-view">
-		    			<div class="today"></div><div class="bar" style="height:1rem;">
-		    			</div><div class="bar" style="height:2rem;"></div><div class="bar" style="height:1.5rem;"></div><div class="bar" style="height:3rem;"></div><div class="bar" style="height:5rem;"></div>
-		    		</div>
-		    		<div class="news-title">
-		    			高麗菜價格大跌
-		    		</div>
-	    		</a>
-
-	    	</div>
-
-	    	<div class="news-event" style="left: 1rem; top:15rem;">
-	    		<div class="news-view">
-	    			<div class="bar" style="height:4rem;">
-	    			</div><div class="bar" style="height:2rem;"></div><div class="bar" style="height:7.5rem;"></div><div class="bar" style="height:6rem;"></div><div class="bar" style="height:5rem;"></div><div class="bar" style="height:4rem;"></div><div class="bar" style="height:8rem;"></div>
-	    		</div>
-	    		<div class="news-title">
-	    			亞洲投資銀行
-	    		</div>
-	    	</div>
-
-
-	    	<div class="news-event" style="left: 1rem; top:30rem;">
-	    		<div class="news-view">
-	    			<div class="bar" style="height:5rem;"></div>
-	    		</div>
-	    		<div class="news-title">
-	    			愚人節
-	    		</div>
-	    	</div>
-
-	    	<div class="news-event" style="left: 1rem; top:45rem;">
-	    		<div class="news-view">
-	    			<div class="bar" style="height:4rem;">
-	    			</div><div class="bar" style="height:2rem;"></div><div class="bar" style="height:7.5rem;"></div><div class="bar" style="height:6rem;"></div><div class="bar" style="height:5rem;"></div><div class="bar" style="height:4rem;"></div><div class="bar" style="height:8rem;"></div><div class="bar" style="height:10rem;"></div><div class="bar" style="height:2rem;"></div><div class="bar" style="height:4rem;"></div><div class="bar" style="height:8rem;"></div>
-	    		</div>
-	    		<div class="news-title">
-	    			柯文哲
-	    		</div>
-	    	</div>
-    	</div>
-
+                </div-->
+                <div class="event-canvas">
+                    <div class="news-event" ng-repeat="newsEvent in newsEvents">
+                        <a href="{[{ newsEvent.link }]}">
+                            <div class="news-view">
+                                <div class="bar" style="height:{[{h}]}rem;" ng-repeat="h in newsEvent.viewHeight track by $index">
+                                </div>
+                            </div>
+                            <div class="news-title">
+                                {[{newsEvent.title}]}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script type="text/javascript">
+    var oortiApp = angular.module('oortiApp', []);
+    oortiApp.config(function($interpolateProvider) {
+        $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+    });
 
+    oortiApp.controller('oortiCtrl', function($scope) {
+        $scope.newsEvents = [{
+            'title': '高麗菜價格大跌',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [3, 4, 5, 2, 3.4, 7]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '愚人節',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4]
+        }, {
+            'title': '柯文哲',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 3.3, 1, 3, 5, 5.5, 7, 2.5]
+        }];
+
+    });
+    </script>
     <script src="/js/vendor/jquery.js"></script> 
 <script src="/js/vendor/fastclick.js"></script>
 <script src="/js/foundation.min.js"></script> 
