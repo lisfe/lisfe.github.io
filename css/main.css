@@ -6775,8 +6775,6 @@ th.hide-for-touch {
   .oorti .row {
     max-width: initial;
     margin: 0; }
-  .oorti .region-title {
-    height: 50vh; }
   .oorti h2 {
     font-size: 1.7rem;
     padding: 0.1rem 0;
@@ -6785,10 +6783,52 @@ th.hide-for-touch {
     margin: 0px; }
   .oorti .today h2 {
     background-color: #71C87C; }
-  .oorti .small-region {
+  .oorti .event-cards-container {
+    height: 100%;
     overflow-y: auto; }
-    .oorti .small-region .event-table {
-      height: 50vh; }
+    .oorti .event-cards-container .event-card {
+      margin: 0.5rem;
+      background-color: #E9FACC;
+      padding: 1rem 0.5rem;
+      line-height: 1;
+      box-shadow: 0 2px 1px #888888; }
+      .oorti .event-cards-container .event-card a {
+        color: #222222; }
+  .oorti .small-region {
+    height: 50vh;
+    position: relative; }
+    .oorti .small-region .region-title {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3rem; }
+    .oorti .small-region .event-cards-container {
+      margin-left: 3rem; }
+  .oorti .trend {
+    height: 30vh; }
+  .oorti .today-events {
+    height: 70vh;
+    overflow-y: auto; }
+    .oorti .today-events .events-region {
+      height: 100%;
+      position: relative; }
+      .oorti .today-events .events-region h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3rem;
+        width: 100%; }
+      .oorti .today-events .events-region .events-container {
+        height: 100%;
+        padding-top: 3rem;
+        overflow-y: auto; }
+        .oorti .today-events .events-region .events-container .event {
+          height: 5rem;
+          margin: 1rem;
+          padding: 1rem;
+          background-color: #E9FACC;
+          box-shadow: 0 3px 2px #888888; }
   .oorti .event-table {
     overflow-y: auto; }
     .oorti .event-table .ruler {
@@ -6806,14 +6846,6 @@ th.hide-for-touch {
       position: relative;
       padding: 1rem 0;
       overflow: auto; }
-    .oorti .event-table .news-event-s {
-      margin: 1rem;
-      background-color: #E9FACC;
-      padding: 1rem;
-      line-height: 1;
-      box-shadow: 0 2px 1px #888888; }
-      .oorti .event-table .news-event-s a {
-        color: #222222; }
     .oorti .event-table .news-event {
       margin: 1rem;
       background-color: #E9FACC;

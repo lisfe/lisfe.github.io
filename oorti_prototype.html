@@ -16,16 +16,16 @@
     <!-- add angularJS by lisfe>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script-->
     <script type="text/javascript" src="/js/angular.js"></script>
+    <script src="http://d3js.org/d3.v3.js"></script>
 </head>
 
 <body class="oorti" ng-controller="oortiCtrl">
     <div class="row">
         <div class="columns medium-2">
-        	<div class="small-region row">
-        	<h2 class="region-title columns small-1">關注事件</h2>
-        	<div class="event-table columns small-11">
-                <div class="event-canvas">
-                    <div class="news-event-s" ng-repeat="newsEvent in newsEvents">
+            <div class="small-region">
+                <h2 class="region-title">關注</h2>
+                <div class="event-cards-container">
+                    <div class="event-card" ng-repeat="newsEvent in focusedEvents">
                         <a href="{[{ newsEvent.link }]}">
                             <div class="news-title">
                                 {[{newsEvent.title}]}
@@ -34,12 +34,10 @@
                     </div>
                 </div>
             </div>
-        	</div>
-        	<div class="small-region row">
-        	<h2 class="region-title columns small-1">最近關心</h2>
-        	<div class="event-table columns small-11">
-                <div class="event-canvas">
-                    <div class="news-event-s" ng-repeat="newsEvent in newsEvents">
+            <div class="small-region">
+                <h2 class="region-title">最近</h2>
+                <div class="event-cards-container">
+                    <div class="event-card" ng-repeat="newsEvent in focusedEvents">
                         <a href="{[{ newsEvent.link }]}">
                             <div class="news-title">
                                 {[{newsEvent.title}]}
@@ -48,42 +46,221 @@
                     </div>
                 </div>
             </div>
-        	</div>
-
         </div>
         <div class="columns medium-10 today">
-        	<h2>今日事件</h2>
-            <div class="event-table">
-                <!--div class="ruler">
-                    <span class="time-block">
-    			今天
-    		</span><span class="time-block lb">
-    			本週
-    		</span><span class="time-block lb">
-    			上週
-    		</span>
-                </div-->
-                <div class="event-canvas">
-                    <div class="news-event" ng-repeat="newsEvent in newsEvents">
-                        <a href="{[{ newsEvent.link }]}">
-                            <div class="news-view">
-                                <div class="bar" style="height:{[{h}]}rem;" ng-repeat="h in newsEvent.viewHeight track by $index">
-                                </div>
-                            </div>
-                            <div class="news-title">
-                                {[{newsEvent.title}]}
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="trend" trend-viewer></div>
+            <div class="today-events row">
+            	<div class="columns medium-4 events-region">
+            		<h2>大事件</h2>
+            		<div class="events-container">
+            			<div class="event" ng-repeat="newsEvent in newsEvents">
+	                        <a href="{[{ newsEvent.link }]}">
+	                            <div class="news-title">
+	                                {[{newsEvent.title}]}
+	                            </div>
+	                        </a>
+	                    </div>
+            		</div>
+            	</div>
+            	<div class="columns medium-4 events-region">
+            		<h2>新事件</h2>
+            		<div class="events-container">
+            			<div class="event" ng-repeat="newsEvent in newsEvents">
+	                        <a href="{[{ newsEvent.link }]}">
+	                            <div class="news-title">
+	                                {[{newsEvent.title}]}
+	                            </div>
+	                        </a>
+	                    </div>
+            		</div>
+            	</div>
+            	<div class="columns medium-4 events-region">
+            		<h2>推薦關注</h2>
+            		<div class="events-container">
+            			<div class="event" ng-repeat="newsEvent in newsEvents">
+	                        <a href="{[{ newsEvent.link }]}">
+	                            <div class="news-title">
+	                                {[{newsEvent.title}]}
+	                            </div>
+	                        </a>
+	                    </div>
+            		</div>
+            	</div>
+            	
+	            <!--h2>今日事件</h2>
+	            <div class="event-table">
+	                <div class="event-canvas">
+	                    <div class="news-event" ng-repeat="newsEvent in newsEvents">
+	                        <a href="{[{ newsEvent.link }]}">
+	                            <div class="news-view">
+	                                <div class="bar" style="height:{[{h}]}rem;" ng-repeat="h in newsEvent.viewHeight track by $index">
+	                                </div>
+	                            </div>
+	                            <div class="news-title">
+	                                {[{newsEvent.title}]}
+	                            </div>
+	                        </a>
+	                    </div>
+	                </div>
+	            </div-->	
             </div>
+            
         </div>
     </div>
     <script type="text/javascript">
+    var fakeD3Data = [
+    	{
+    		name: '柯文哲',
+    		values: [
+    			{label: "0", value: 3},
+    			{label: "1", value: 3},
+    			{label: "2", value: 4},
+    			{label: "3", value: 5},
+    			{label: "4", value: 2},
+    			{label: "5", value: 7},
+    			{label: "6", value: 2},
+    			{label: "7", value: 2},
+    			{label: "8", value: 4},
+    			{label: "9", value: 3},
+    			{label: "10", value: 2}
+    		] 
+    	},{
+    		name: '高麗菜價格大跌',
+    		values: [
+		    	{label: "0", value: 0},
+    			{label: "1", value: 0},
+    			{label: "2", value: 0},
+    			{label: "3", value: 0},
+    			{label: "4", value: 0},
+    			{label: "5", value: 0},
+    			{label: "6", value: 2},
+    			{label: "7", value: 7},
+    			{label: "8", value: 4},
+    			{label: "9", value: 9},
+    			{label: "10", value: 2}
+    		] 
+    	},{
+    		name: '亞洲投資銀行',
+    		values: [
+		    	{label: "0", value: 2},
+    			{label: "1", value: 4},
+    			{label: "2", value: 6},
+    			{label: "3", value: 1},
+    			{label: "4", value: 0},
+    			{label: "5", value: 0},
+    			{label: "6", value: 0},
+    			{label: "7", value: 0},
+    			{label: "8", value: 0},
+    			{label: "9", value: 0},
+    			{label: "10", value: 0}
+    		] 
+    	},{
+    		name: '亞洲投資銀e行',
+    		values: [
+		    	{label: "0", value: 0},
+    			{label: "1", value: 0},
+    			{label: "2", value: 0},
+    			{label: "3", value: 1},
+    			{label: "4", value: 4},
+    			{label: "5", value: 3},
+    			{label: "6", value: 4},
+    			{label: "7", value: 1},
+    			{label: "8", value: 0},
+    			{label: "9", value: 0},
+    			{label: "10", value: 0}
+    		] 
+    	}
+    ];
     var oortiApp = angular.module('oortiApp', []);
     oortiApp.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
     });
+
+    oortiApp.directive("trendViewer", function() {
+        return {
+            restrict: "A",
+            link: function(scope, element, attr) {
+                console.log(element);
+                var width = element[0].offsetWidth;
+                var height = element[0].offsetHeight;
+		        var x = d3.scale.ordinal()
+		            .rangeRoundBands([0, width], .1);
+		        var y = d3.scale.linear()
+		            .rangeRound([height, 0]);
+		        var stack = d3.layout.stack()
+		            //.offset("zero")
+		            .offset("wiggle")
+		            .values(function (d) { return d.values; })
+		            /*.defined(function (d) {
+		            	return d;
+		            })*/
+		            .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
+		            .y(function (d) { return d.value; });
+		        var area = d3.svg.area()
+		            .interpolate("cardinal")
+/*		            .defined(function (d) { 
+		            	return d.y !== 0;
+		            })*/
+		            .x(function (d) { return x(d.label) + x.rangeBand() / 2; })
+		            .y0(function (d) { return y(d.y0 + 1); })
+		            .y1(function (d) { return y(d.y0 + d.y + 1) ; });
+		        var color = d3.scale.ordinal()
+		            .range(["#222","#555","#999","#EEE"]);
+
+                var svg = d3.select(element[0]).append("svg").attr("width", width).attr("height", height);
+
+                color.domain(fakeD3Data.map(function(d){
+                	return d.name;
+                }));
+
+                x.domain(["0","1","2","3","4","5","6","7","8","9","10"]);
+                y.domain([0,20]);
+
+                stack(fakeD3Data);
+
+		        var selection = svg.selectAll(".series")
+		          .data(fakeD3Data)
+		          .enter().append("g")
+		          .attr("class", "series");
+
+		        selection.append("path")
+		          .attr("class", "streamPath")
+		          .attr("d", function (d) { 
+		          	return area(d.values); 
+		          })
+		          .style("fill", function (d) { 
+		          	return color(d.name); 
+		          })
+		          .style("stroke", "grey");
+
+
+
+                var dataset = [1, 2, 3, 4, 5, 7, 2, 4, 9, 3, 5, 4];
+                /*
+                var circles = svg.selectAll("circle")
+                    .data(dataset)
+                    .enter()
+                    .append("circle");
+                circles.attr("cx", function(d, i) {
+                        return (i * 50) + 25;
+                    })
+                    .attr("cy", 250)
+                    .attr("r", function(d) {
+                        return d;
+                    });
+    			*/
+    			/*
+    			var area = d3.svg.area()
+				    .x(function(d) { return x(d.date); })
+				    .y0(function(d) { return y(d.y0); })
+				    .y1(function(d) { return y(d.y0 + d.y); });
+				    */
+
+
+            }
+        };
+    });
+
 
     oortiApp.controller('oortiCtrl', function($scope) {
         $scope.newsEvents = [{
@@ -94,6 +271,55 @@
             'title': '亞洲投資銀行',
             'link': "/oorti_event_prototype.html",
             'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '亞洲銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '愚人節',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4]
+        }, {
+            'title': '柯文哲',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 3.3, 1, 3, 5, 5.5, 7, 2.5]
+        }];
+        $scope.focusedEvents = [{
+            'title': '高麗菜價格大跌',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [3, 4, 5, 2, 3.4, 7]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '亞洲投資銀行',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
+        }, {
+            'title': '愚人節',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4]
+        }, {
+            'title': '愚人節',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4]
+        }, {
+            'title': '愚人節',
+            'link': "/oorti_event_prototype.html",
+            'viewHeight': [4]
         }, {
             'title': '愚人節',
             'link': "/oorti_event_prototype.html",
