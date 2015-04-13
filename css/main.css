@@ -6807,6 +6807,9 @@ th.hide-for-touch {
       margin-left: 3rem; }
   .oorti .trend {
     height: 30vh; }
+    .oorti .trend .axis path {
+      fill: none;
+      stroke: #000; }
   .oorti .today-events {
     height: 70vh;
     overflow-y: auto; }
