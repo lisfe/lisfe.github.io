@@ -24,11 +24,11 @@
 <body class="oorti greenTheme" ng-controller="oortiCtrl">
 	<div class="generalView" ng-controller="generalViewCtrl" ng-class="{'mini': displaySetting.generalMin, hided:displaySetting.generalHided}">
 		<div class="hideBar">
-			<div class="generalViewHide vc-wrap" ng-click="changeHide()">
-				<i class="fa fa-angle-double-left vc"></i>
+			<div class="generalViewHide c-wrap" ng-click="changeHide()">
+				<i class="fa fa-angle-double-left c"></i>
 			</div>
-			<div class="generalViewChange vc-wrap" ng-click="changeGeneralView()">
-				<div class="vc">
+			<div class="generalViewChange c-wrap" ng-click="changeGeneralView()">
+				<div class="c">
 					<i class="fa fa-angle-right"></i>
 					<i class="fa fa-angle-left"></i>
 				</div>
@@ -36,14 +36,15 @@
 			</div>
 		</div>
 	    <div class="user-view" ng-class="{hided: displaySetting.userHided}">
-	    	<div class="user-info vc-wrap">
-	    		<i class="fa fa-user vc user-icon"></i>
+	    	<div class="user-info c-wrap">
+	    		<i class="fa fa-user c user-icon"></i>
 	    	</div>
 			<div class="event-cards-container">
 			    <div class="event-card" ng-repeat="newsEvent in focusedEvents" ng-click="showEvent('user')">
 			        <div class="news-title">
 			            {[{newsEvent.title}]}
 			        </div>
+			        <i class="fa fa-bookmark right"></i>
 			    </div>
 			</div>
 	    </div>
@@ -269,7 +270,7 @@
 			}
 		});
 
-		$scope.todayTitles = ["大事件","新事件","推薦關注"];
+		$scope.todayTitles = ["熱門","最新","推薦"];
 
 		$scope.d3Draw = function(element, data) {
             console.log(element);
