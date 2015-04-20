@@ -6785,9 +6785,96 @@ th.hide-for-touch {
 }
 */
 .oorti {
-  background-color: #E9FACC;
+    /*
+    .event-table {
+        //height: 60rem;
+        
+        overflow-y: auto;
+        .ruler {
+            //height: 100%;
+            height: 3rem;
+            width: 100%;
+            background-color: $li-lb;
+            .time-block {
+                display: inline-block;
+                width: 15rem;
+                text-align: center;
+                height: 100%;
+            }
+            .lb {
+                border-left: solid 2px $li-db;
+            }
+        }
+
+        .event-canvas {
+            position: relative;
+            padding: 1rem 0;
+            overflow: auto;
+        }
+
+        .news-event {
+            a {
+                color: $jet;
+            }
+            //position: absolute;
+            margin: 1rem;
+            background-color: $li-lg;
+            width: 20rem;
+            padding: 1rem;
+            display: inline-block;
+            line-height: 1;
+            box-shadow: 0 3px 2px #888888;
+            
+            .today {
+                border-left: solid 2px $snow;
+                display: inline-block;
+                height: 1.5rem;
+            }
+            
+            .bar {
+                width: 2rem;
+                display: inline-block;
+                background: -webkit-linear-gradient(bottom, $li-b1 , $li-b2);
+                //background-color: $lisfe-secondary-1-0;
+                border-bottom: solid 2px $snow;
+                vertical-align: bottom;
+            }
+            .news-title {
+                font-size: 1.5rem;
+
+            }
+        }
+        .news-event-v {
+            display: inline-block;
+
+            .bar {
+                margin: 0 auto;
+                height: 1rem;
+                background-color: $lisfe-secondary-1-2;
+            }
+        }
+    }
+    */
   overflow-x: hidden;
   overflow-y: hidden; }
+  .oorti.greenTheme {
+    background-color: #F2FFE2; }
+    .oorti.greenTheme h2 {
+      background-color: #6CE57B; }
+    .oorti.greenTheme a {
+      color: #222222; }
+    .oorti.greenTheme .event-card {
+      background-color: #F9F9F9; }
+    .oorti.greenTheme .small-region {
+      background-color: #F2FFE2; }
+    .oorti.greenTheme .user-info {
+      background-color: #CCCCCC; }
+    .oorti.greenTheme .generalViewHide {
+      background-color: #71C87C; }
+    .oorti.greenTheme .generalViewChange {
+      background-color: #6CE57B; }
+    .oorti.greenTheme .today-view h2 {
+      background-color: #71C87C; }
   .oorti .row {
     max-width: initial;
     margin: 0; }
@@ -6795,48 +6882,7 @@ th.hide-for-touch {
     font-size: 1.7rem;
     padding: 0.1rem 0;
     text-align: center;
-    background-color: #6CE57B;
     margin: 0px; }
-  .oorti .event-cards-container {
-    height: 100%;
-    overflow-y: auto; }
-    .oorti .event-cards-container .event-card {
-      margin: 0.5rem;
-      background-color: #F9F9F9;
-      padding: 1rem 0.5rem;
-      line-height: 1;
-      box-shadow: 0 2px 1px #888888; }
-      .oorti .event-cards-container .event-card a {
-        color: #222222; }
-  .oorti .user-view {
-    width: 15rem;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    background-color: #E9FACC;
-    transition: left 0.4s cubic-bezier(0.215, 0.61, 0.355, 1); }
-    .oorti .user-view.hided {
-      left: -14rem; }
-    .oorti .user-view .hideBar {
-      width: 1rem;
-      height: 100vh;
-      position: absolute;
-      background-color: #6CE57B;
-      top: 0;
-      right: 0; }
-  .oorti .small-region {
-    height: 50vh;
-    position: relative; }
-    .oorti .small-region .region-title {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 3rem; }
-    .oorti .small-region .event-cards-container {
-      margin-left: 3rem;
-      margin-right: 1rem; }
   .oorti .trend {
     height: 30vh; }
     .oorti .trend .axis path {
@@ -6846,8 +6892,6 @@ th.hide-for-touch {
     margin-left: 15rem;
     overflow-x: hidden;
     transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
-    .oorti .today-view h2 {
-      background-color: #71C87C; }
     .oorti .today-view .today-events {
       height: 70vh;
       overflow-y: hidden; }
@@ -6868,10 +6912,26 @@ th.hide-for-touch {
           overflow-y: auto; }
           .oorti .today-view .today-events .events-region .events-container .event {
             height: 5rem;
-            margin: 1rem;
-            padding: 1rem;
+            margin: 0.5rem 1rem;
+            padding: 0;
+            border: solid 1px #CCCCCC;
             background-color: #F9F9F9;
-            box-shadow: 0 3px 2px #888888; }
+            position: relative; }
+            .oorti .today-view .today-events .events-region .events-container .event:before {
+              content: " ";
+              display: inline-block;
+              vertical-align: middle;
+              height: 100%; }
+            .oorti .today-view .today-events .events-region .events-container .event .color-tag {
+              position: absolute;
+              top: 0;
+              border-width: 2.5rem 1rem;
+              border-style: solid;
+              border-color: transparent transparent transparent #DBF95F; }
+            .oorti .today-view .today-events .events-region .events-container .event .news-title {
+              margin-left: 1rem;
+              display: inline-block;
+              vertical-align: middle; }
     .oorti .today-view.mini {
       margin-left: 1rem;
       width: 14rem;
@@ -6880,58 +6940,56 @@ th.hide-for-touch {
         height: 100%; }
         .oorti .today-view.mini .today-events .events-region {
           width: 14rem; }
+    .oorti .today-view.hided {
+      margin-left: -14rem;
+      width: 14rem;
+      height: 100vh; }
+  .oorti .hideBar {
+    width: 1rem;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0; }
+    .oorti .hideBar .generalViewHide {
+      height: 50vh; }
+    .oorti .hideBar .generalViewChange {
+      height: 50vh; }
+  .oorti .vc-wrap {
+    position: relative; }
+    .oorti .vc-wrap .vc {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .oorti .user-view {
+    width: 14rem;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    transition: left 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .oorti .user-view.hided {
+      left: -14rem; }
+    .oorti .user-view .user-info {
+      width: 100%;
+      height: 30vh; }
+      .oorti .user-view .user-info .user-icon {
+        font-size: 6rem; }
+    .oorti .user-view .event-cards-container {
+      height: 70vh;
+      overflow-y: auto; }
+      .oorti .user-view .event-cards-container .event-card {
+        margin: 0.5rem;
+        padding: 1rem 0.5rem;
+        border: solid 1px #CCCCCC; }
   .oorti .generalView {
     transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
     .oorti .generalView.mini {
-      position: absolute; }
-  .oorti .event-table {
-    overflow-y: auto; }
-    .oorti .event-table .ruler {
-      height: 3rem;
-      width: 100%;
-      background-color: #91D6FB; }
-      .oorti .event-table .ruler .time-block {
-        display: inline-block;
-        width: 15rem;
-        text-align: center;
-        height: 100%; }
-      .oorti .event-table .ruler .lb {
-        border-left: solid 2px #073979; }
-    .oorti .event-table .event-canvas {
-      position: relative;
-      padding: 1rem 0;
-      overflow: auto; }
-    .oorti .event-table .news-event {
-      margin: 1rem;
-      background-color: #E9FACC;
-      width: 20rem;
-      padding: 1rem;
-      display: inline-block;
-      line-height: 1;
-      box-shadow: 0 3px 2px #888888;
-      /*
-      .today {
-          border-left: solid 2px $snow;
-          display: inline-block;
-          height: 1.5rem;
-      }
-      */ }
-      .oorti .event-table .news-event a {
-        color: #222222; }
-      .oorti .event-table .news-event .bar {
-        width: 2rem;
-        display: inline-block;
-        background: -webkit-linear-gradient(bottom, #17C9DA, #63E0EC);
-        border-bottom: solid 2px #F9F9F9;
-        vertical-align: bottom; }
-      .oorti .event-table .news-event .news-title {
-        font-size: 1.5rem; }
-    .oorti .event-table .news-event-v {
-      display: inline-block; }
-      .oorti .event-table .news-event-v .bar {
-        margin: 0 auto;
-        height: 1rem;
-        background-color: #FFD574; }
+      position: absolute;
+      width: 15rem; }
+    .oorti .generalView.hided {
+      position: absolute;
+      left: -14rem; }
   .oorti .oorti-event {
     overflow-y: auto;
     height: 100vh;
@@ -6940,6 +6998,8 @@ th.hide-for-touch {
     background-color: #E9FACC; }
     .oorti .oorti-event.show {
       margin-left: 15rem; }
+    .oorti .oorti-event.full {
+      margin-left: 1rem; }
     .oorti .oorti-event .row {
       max-width: initial; }
     .oorti .oorti-event .event-deep .src-column {

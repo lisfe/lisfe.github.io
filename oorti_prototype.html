@@ -17,40 +17,44 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script-->
     <script type="text/javascript" src="/js/angular.js"></script>
     <script type="text/javascript" src="/js/d3.min.js"></script>
+    <!--  font awesome  -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body class="oorti" ng-controller="oortiCtrl">
-	<div class="generalView" ng-controller="generalViewCtrl" ng-class="{mini: displaySetting.todayMin}">
+<body class="oorti greenTheme" ng-controller="oortiCtrl">
+	<div class="generalView" ng-controller="generalViewCtrl" ng-class="{'mini': displaySetting.generalMin, hided:displaySetting.generalHided}">
+		<div class="hideBar">
+			<div class="generalViewHide vc-wrap" ng-click="changeHide()">
+				<i class="fa fa-angle-double-left vc"></i>
+			</div>
+			<div class="generalViewChange vc-wrap" ng-click="changeGeneralView()">
+				<div class="vc">
+					<i class="fa fa-angle-right"></i>
+					<i class="fa fa-angle-left"></i>
+				</div>
+				
+			</div>
+		</div>
 	    <div class="user-view" ng-class="{hided: displaySetting.userHided}">
-	        <div class="small-region">
-	            <h2 class="region-title">關注</h2>
-	            <div class="event-cards-container">
-	                <div class="event-card" ng-repeat="newsEvent in focusedEvents" ng-click="setDisplayMode('today')">
-                        <div class="news-title">
-                            {[{newsEvent.title}]}
-                        </div>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="small-region">
-	            <h2 class="region-title">最近</h2>
-	            <div class="event-cards-container">
-	                <div class="event-card" ng-repeat="newsEvent in focusedEvents" ng-click="setDisplayMode('today')">
-                        <div class="news-title">
-                            {[{newsEvent.title}]}
-                        </div>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="hideBar" ng-click="changeDisplayMode()"></div>
+	    	<div class="user-info vc-wrap">
+	    		<i class="fa fa-user vc user-icon"></i>
+	    	</div>
+			<div class="event-cards-container">
+			    <div class="event-card" ng-repeat="newsEvent in focusedEvents" ng-click="showEvent('user')">
+			        <div class="news-title">
+			            {[{newsEvent.title}]}
+			        </div>
+			    </div>
+			</div>
 	    </div>
-	    <div class="today-view" ng-class="{mini: displaySetting.todayMin}">
-	        <div class="trend" ng-hide="displaySetting.todayMin" trend-viewer></div>
+	    <div class="today-view" ng-class="{'mini': displaySetting.todayMin, 'hided':displaySetting.todayHided}">
+	        <div class="trend" ng-hide="displaySetting.todayMin||displaySetting.todayHided" trend-viewer></div>
 	        <div class="today-events">
 	            <div class="events-region" ng-repeat="title in todayTitles">
 	                <h2>{[{ title }]}</h2>
 	                <div class="events-container">
-	                    <div class="event" ng-repeat="newsEvent in newsEvents" ng-click="setDisplayMode('today')">
+	                    <div class="event" ng-repeat="newsEvent in newsEvents" ng-click="showEvent('today')">
+	                    	<div class="color-tag"></div>
                             <div class="news-title">
                                 {[{newsEvent.title}]}
                             </div>
@@ -61,7 +65,7 @@
 	        </div>
 	    </div>
 	</div>
-	<div class="oorti-event" ng-controller="eventCtrl" ng-class="{show:displaySetting.show}">
+	<div class="oorti-event" ng-controller="eventCtrl" ng-class="{show:displaySetting.show, full:displaySetting.full}">
 		<div class="event-deep">
         <h1>亞洲投資銀行</h1>
         <!--div class="row">
@@ -178,14 +182,6 @@
     oortiApp.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
     });
-/*
-    oortiApp.directive("userView", function() {
-    	return {
-    		restrict: "A"
-
-    	}
-    });
-*/
     oortiApp.directive("trendViewer", function() {
         return {
             restrict: "A",
@@ -202,49 +198,74 @@
     oortiApp.controller("eventCtrl",function($scope){
     	$scope.displaySetting = {};
     	$scope.displaySetting.show = false;
+    	$scope.displaySetting.full = false;
     	$scope.$watch("displayMode.mode", function(nV, oV) {
     		if(nV == "general"){
     			$scope.displaySetting.show = false;
+    			$scope.displaySetting.full = false;
+    		}else if(nV == "event"){
+    			$scope.displaySetting.show = false;
+    			$scope.displaySetting.full = true;
     		}else{
     			$scope.displaySetting.show = true;
+    			$scope.displaySetting.full = false;
     		}
     	});
     });
 	oortiApp.controller("generalViewCtrl",function($scope) {
 		$scope.displaySetting = {};
+		// both, user, today
+		$scope.displayMode.left = "both";
 		$scope.displaySetting.userHided = false;
 		$scope.displaySetting.todayHided = false;
 		$scope.displaySetting.todayMin = false;
-		$scope.changeDisplayMode = function(){
-			//$scope.isHided = !$scope.isHided;
-			if($scope.displayMode.mode == "today"){
-				$scope.displayMode.mode = "general";
+		$scope.displaySetting.generalMin = false;
+		$scope.displaySetting.generalHided = false;
+		$scope.showEvent = function(type){
+			$scope.displayMode.left = type;
+			$scope.displayMode.mode = "both";
+		}
+		$scope.changeHide = function(){
+			if($scope.displayMode.mode == "both"){
+				$scope.displayMode.mode = "event";
 			}else{
-				$scope.displayMode.mode = "today";
+				$scope.displayMode.mode = "general";
+				$scope.displayMode.left = "both";
 			}
 		};
-		
-		$scope.$watch("displayMode.mode", function(nV, oV) {
-			if(nV == "general") {
-				// hide event, show today and user
+		$scope.changeGeneralView = function(){
+
+			if($scope.displayMode.left == "user"){
+				$scope.displayMode.left = "today";
+			}else if($scope.displayMode.left == "today"){
+				$scope.displayMode.left = "user";
+			}
+		}
+		$scope.$watch("displayMode.left", function(nV, oV){
+			if(nV == "both"){
 				$scope.displaySetting.userHided = false;
 				$scope.displaySetting.todayHided = false;
 				$scope.displaySetting.todayMin = false;
-			}else if (nV == "user"){
-				// show event and user, hide today
+			}else if(nV == "user"){
 				$scope.displaySetting.userHided = false;
 				$scope.displaySetting.todayHided = true;
 				$scope.displaySetting.todayMin = false;
-			}else if (nV == "today"){
-				// show event and today, hide user
-				$scope.displaySetting.userHided = true;
-				$scope.displaySetting.todayHided = false;
-				$scope.displaySetting.todayMin = true;
 			}else{
-				// show event, hide today and user
 				$scope.displaySetting.userHided = true;
 				$scope.displaySetting.todayHided = false;
 				$scope.displaySetting.todayMin = true;
+			}
+		});
+		$scope.$watch("displayMode.mode", function(nV, oV) {
+			if(nV == "general") {
+				$scope.displaySetting.generalMin = false;
+				$scope.displaySetting.generalHided = false;
+			}else if (nV == "both"){
+				$scope.displaySetting.generalMin = true;
+				$scope.displaySetting.generalHided = false;
+			}else{
+				$scope.displaySetting.generalMin = false;
+				$scope.displaySetting.generalHided = true;
 			}
 		});
 
@@ -261,7 +282,7 @@
             var height = fullHeight - margin.t - margin.b;
 
 	        // domain : x, y, color
-	        var color = d3.scale.ordinal().range(["#222","#555","#999","#EEE"]);
+	        var color = d3.scale.ordinal().range(["#97EC5B","#4ECB9C","#DBF95F","#00AB6A"]);
 	        var x = d3.time.scale().range([0,width]);
 	        var y = d3.scale.linear().range([height, 0]);
 
@@ -324,11 +345,10 @@
     oortiApp.controller('oortiCtrl', function($scope) {
     	
     	$scope.displayMode = {};
+    	// general, both, event
     	$scope.displayMode.mode = "general";
 
-    	$scope.setDisplayMode = function(mode){
-    		$scope.displayMode.mode = mode;	
-    	};
+
         $scope.newsEvents = [{
             'title': '臺大醫院機房起火',
             'link': "/oorti_event_prototype.html",
