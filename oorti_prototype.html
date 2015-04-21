@@ -51,14 +51,18 @@
 	    <div class="today-view" ng-class="{'mini': displaySetting.todayMin, 'hided':displaySetting.todayHided}">
 	        <div class="trend" ng-hide="displaySetting.todayMin||displaySetting.todayHided" trend-viewer></div>
 	        <div class="today-events">
-	            <div class="events-region" ng-repeat="title in todayTitles">
-	                <h2>{[{ title }]}</h2>
+	            <div class="events-region" ng-repeat="eventGroup in todayEventGroups">
+	                <h2>{[{ eventGroup.title }]}</h2>
 	                <div class="events-container">
-	                    <div class="event" ng-repeat="newsEvent in newsEvents" ng-click="showEvent('today')">
-	                    	<div class="color-tag"></div>
+	                    <div class="event" ng-repeat="newsEvent in eventGroup.events" ng-click="showEvent('today')">
+	                    	
                             <div class="news-title">
                                 {[{newsEvent.title}]}
                             </div>
+                            <div class="news-detail">
+                            	<div class="cc"></div><div class="color-tag-end"></div>
+                            </div>
+                            
 	                    </div>
 	                </div>
 	            </div>
@@ -183,6 +187,86 @@
     oortiApp.config(function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
     });
+
+    oortiApp.factory("news",function(){
+    	return {
+    		newsData: { "134534":{}, "134451":{}, "331341":{}},
+    		getNews: function(s){
+    			return newsData[s];
+    		}
+    	};
+    });
+    oortiApp.factory("events",function(news){
+    	return {
+    		eventData: { 
+    			"1":{'title': '台灣水庫缺水'}, 
+    			"2":{'title': '歐盟控告google壟斷'}, 
+    			"3":{'title': '台北看守所囚犯自殺'},
+    			"4":{'title': '亞洲投資銀行'},
+    			"5":{'title': '臺大醫院機房起火'}
+    		},
+
+    		getEvent: function(s){
+    			return this.eventData[s];
+    		}
+    	};
+    });
+    oortiApp.factory("user",function(events){
+    	var recent = []; // fake data here
+    	var pined = [];  // fake data here
+    	var pinedEvents = [];
+    	var recentEvents = [];
+    	for(var i = 0; i < pined.length; i++){
+    		pinedEvents.push(events.getEvent(pined[i]));
+    	}
+    	for(var i = 0; i < recent.length; i++){
+    		recentEvents.push(events.getEvent(recent[i]));
+    	}
+    	return {
+    		"recent": recent,
+    		"pined": pined,
+    		"pinedEvents": pinedEvents,
+    		"recentEvents": recentEvents
+    	};
+    });
+    oortiApp.factory("today",function(events){
+    	var big = ["3","1","2"];			// fake data here
+    	var newest = ["5","2"];		// fake data here
+    	var recommend = ["3","2","4","1"];		// fake data here
+    	var bigEvents = [];
+    	var newestEvents = [];
+    	var recommendEvents = [];
+    	for(var i = 0; i < big.length; i++){
+    		bigEvents.push(events.getEvent(big[i]));
+    	}
+       	for(var i = 0; i < newest.length; i++){
+    		newestEvents.push(events.getEvent(newest[i]));
+    	}
+       	for(var i = 0; i < recommend.length; i++){
+    		var a = events;
+    		var b = events.getEvent("3");
+    		recommendEvents.push(events.getEvent(recommend[i]));
+    	}
+    	var todayEventGroups = [{
+			'title' : "熱門",
+			'events' : bigEvents
+		},{
+			'title' : "最新",
+			'events' : newestEvents
+		},{
+			'title' : "推薦",
+			'events' : recommendEvents
+		}];
+    	return {
+    		"big": big,
+    		"newest": newest,
+    		"recommend": recommend,
+			"bigEvents": bigEvents,
+    		"newestEvents": newestEvents,
+    		"recommendEvents": recommendEvents,
+    		"todayEventGroups": todayEventGroups
+    	};
+    });
     oortiApp.directive("trendViewer", function() {
         return {
             restrict: "A",
@@ -213,7 +297,7 @@
     		}
     	});
     });
-	oortiApp.controller("generalViewCtrl",function($scope) {
+	oortiApp.controller("generalViewCtrl",function($scope, today, user) {
 		$scope.displaySetting = {};
 		// both, user, today
 		$scope.displayMode.left = "both";
@@ -270,7 +354,7 @@
 			}
 		});
 
-		$scope.todayTitles = ["熱門","最新","推薦"];
+		$scope.todayEventGroups = today.todayEventGroups;
 
 		$scope.d3Draw = function(element, data) {
             console.log(element);
@@ -350,27 +434,7 @@
     	$scope.displayMode.mode = "general";
 
 
-        $scope.newsEvents = [{
-            'title': '臺大醫院機房起火',
-            'link': "/oorti_event_prototype.html",
-            'viewHeight': [3, 4, 5, 2, 3.4, 7]
-        }, {
-            'title': '亞洲投資銀行',
-            'link': "/oorti_event_prototype.html",
-            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
-        }, {
-            'title': '台北看守所囚犯自殺',
-            'link': "/oorti_event_prototype.html",
-            'viewHeight': [4, 2, 7, 6, 5, 4, 12]
-        }, {
-            'title': '歐盟控告google壟斷',
-            'link': "/oorti_event_prototype.html",
-            'viewHeight': [4]
-        }, {
-            'title': '台灣水庫缺水',
-            'link': "/oorti_event_prototype.html",
-            'viewHeight': [4, 3.3, 1, 3, 5, 5.5, 7, 2.5]
-        }];
+
         $scope.focusedEvents = [{
             'title': '高麗菜價格大跌',
             'link': "/oorti_event_prototype.html",

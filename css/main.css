@@ -6921,20 +6921,40 @@ th.hide-for-touch {
             font-size: 1.2rem;
             padding: 0;
             border: solid 1px #CCCCCC;
-            position: relative; }
-            .oorti .today-view .today-events .events-region .events-container .event:before {
-              content: " ";
-              display: inline-block;
-              vertical-align: middle;
-              height: 100%; }
-            .oorti .today-view .today-events .events-region .events-container .event .color-tag {
+            position: relative;
+            overflow-x: hidden;
+            /*&:before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+            }*/ }
+            .oorti .today-view .today-events .events-region .events-container .event .news-title {
+              position: absolute;
+              top: 50%;
+              transform: translate(0, -50%);
+              left: 1rem;
+              right: 1.5rem;
+              text-align: left; }
+            .oorti .today-view .today-events .events-region .events-container .event .news-detail {
               position: absolute;
               top: 0;
-              border-width: 2.5rem 1rem;
+              right: -5rem;
+              height: 100%;
+              width: 8rem;
+              transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1); }
+            .oorti .today-view .today-events .events-region .events-container .event:hover .news-detail {
+              right: 0; }
+            .oorti .today-view .today-events .events-region .events-container .event .cc {
               border-style: solid;
-              border-color: transparent transparent transparent #DBF95F; }
-            .oorti .today-view .today-events .events-region .events-container .event .news-title {
-              margin-left: 1rem;
+              border-color: transparent #DBF95F transparent transparent;
+              border-width: 1rem;
+              display: inline-block;
+              vertical-align: middle; }
+            .oorti .today-view .today-events .events-region .events-container .event .color-tag-end {
+              width: 6rem;
+              height: 100%;
+              background-color: #DBF95F;
               display: inline-block;
               vertical-align: middle; }
     .oorti .today-view.mini {
@@ -6945,6 +6965,9 @@ th.hide-for-touch {
         height: 100%; }
         .oorti .today-view.mini .today-events .events-region {
           width: 14rem; }
+          .oorti .today-view.mini .today-events .events-region .event .news-title {
+            left: 0.5rem;
+            font-size: 1rem; }
     .oorti .today-view.hided {
       margin-left: -14rem;
       width: 14rem;
