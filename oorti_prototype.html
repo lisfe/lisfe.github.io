@@ -31,12 +31,15 @@
 				<div class="c">
 					<i class="fa fa-angle-right"></i>
 					<i class="fa fa-angle-left"></i>
-				</div>
-				
+				</div>	
 			</div>
+			<div class="hide-bar-split"></div>
 		</div>
 	    <div class="user-view" ng-class="{hided: displaySetting.userHided}">
 	    	<div class="user-info c-wrap">
+	    		<h2>
+	    			OORTI
+	    		</h2>
 	    		<i class="fa fa-user c user-icon"></i>
 	    	</div>
 			<div class="event-cards-container">
@@ -51,17 +54,18 @@
 	    <div class="today-view" ng-class="{'mini': displaySetting.todayMin, 'hided':displaySetting.todayHided}">
 	        <div class="trend" ng-hide="displaySetting.todayMin||displaySetting.todayHided" trend-viewer></div>
 	        <div class="today-events">
-	            <div class="events-region" ng-repeat="eventGroup in todayEventGroups">
-	                <h2>{[{ eventGroup.title }]}</h2>
+	            <div class="events-region {[{eventGroup.cssClass}]}" ng-repeat="eventGroup in todayEventGroups">
+	                <i class="fa fa-{[{eventGroup.icon}]} group-icon"></i>
 	                <div class="events-container">
 	                    <div class="event" ng-repeat="newsEvent in eventGroup.events" ng-click="showEvent('today')">
 	                    	
                             <div class="news-title">
                                 {[{newsEvent.title}]}
                             </div>
-                            <div class="news-detail">
+                            <i class="fa fa-shield icon-tag"></i>
+                            <!--div class="news-detail">
                             	<div class="cc"></div><div class="color-tag-end"></div>
-                            </div>
+                            </div-->
                             
 	                    </div>
 	                </div>
@@ -249,13 +253,19 @@
     	}
     	var todayEventGroups = [{
 			'title' : "熱門",
-			'events' : bigEvents
+			'icon' : "comments-o",
+			'events' : bigEvents,
+			'cssClass' : 'big-event'
 		},{
 			'title' : "最新",
-			'events' : newestEvents
+			'icon' : "flash",
+			'events' : newestEvents,
+			'cssClass' : 'newest-event'
 		},{
 			'title' : "推薦",
-			'events' : recommendEvents
+			'icon' : "star",
+			'events' : recommendEvents,
+			'cssClass' : 'recommend-event'
 		}];
     	return {
     		"big": big,
