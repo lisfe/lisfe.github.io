@@ -15,64 +15,57 @@
     <link rel="alternate" type="application/atom+xml" title="LISFESTUDIO" href="http://www.lisfestudio.com /feed.xml " />
     <!-- add angularJS by lisfe>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script-->
+    <script type="text/javascript" src="/js/vendor/jquery.js"></script>
     <script type="text/javascript" src="/js/angular.js"></script>
     <script type="text/javascript" src="/js/d3.min.js"></script>
     <!--  font awesome  -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 
-<body class="oorti greenTheme" ng-controller="oortiCtrl">
-	<div class="generalView" ng-controller="generalViewCtrl" ng-class="{'mini': displaySetting.generalMin, hided:displaySetting.generalHided}">
-		<div class="hideBar">
-			<div class="generalViewHide c-wrap" ng-click="changeHide()">
-				<i class="fa fa-angle-double-left c"></i>
+<body class="oorti green-theme" ng-controller="oortiCtrl">
+	<div class="general-view" ng-controller="generalViewCtrl" ng-class="{'mini': displaySetting.generalMin, hided:displaySetting.generalHided}">
+
+		<div class="general-view-header">
+			<div class="header-buttom" ng-click="changeGeneralView()">
+				<i class="fa fa-angle-right"></i>
 			</div>
-			<div class="generalViewChange c-wrap" ng-click="changeGeneralView()">
-				<div class="c">
-					<i class="fa fa-angle-right"></i>
-					<i class="fa fa-angle-left"></i>
-				</div>	
+			<div class="product-name header-buttom" ng-click="showGeneralView()">
+				OORTI
 			</div>
-			<div class="hide-bar-split"></div>
+			<div class="header-buttom show-left" ng-click="changeHide()">
+				<i class="fa fa-angle-double-left"></i>
+			</div>
 		</div>
+		
 	    <div class="user-view" ng-class="{hided: displaySetting.userHided}">
 	    	<div class="user-info c-wrap">
-	    		<h2>
-	    			OORTI
-	    		</h2>
 	    		<i class="fa fa-user c user-icon"></i>
 	    	</div>
 			<div class="event-cards-container">
-			    <div class="event-card" ng-repeat="newsEvent in focusedEvents" ng-click="showEvent('user')">
-			        <div class="news-title">
-			            {[{newsEvent.title}]}
-			        </div>
-			        <i class="fa fa-bookmark right"></i>
+			    <div ng-repeat="newsEvent in focusedEvents" ng-click="showEvent('user')" event-viewer>
 			    </div>
 			</div>
 	    </div>
+
 	    <div class="today-view" ng-class="{'mini': displaySetting.todayMin, 'hided':displaySetting.todayHided}">
 	        <div class="trend" ng-hide="displaySetting.todayMin||displaySetting.todayHided" trend-viewer></div>
 	        <div class="today-events">
-	            <div class="events-region {[{eventGroup.cssClass}]}" ng-repeat="eventGroup in todayEventGroups">
+	        	<div class="event-group-tabs">
+	        		<div class="event-group-tab {[{eventGroup.cssClass}]}" ng-repeat="eventGroup in todayEventGroups" group-tab>
+	        			<i class="fa fa-{[{eventGroup.icon}]} group-icon"></i>
+	        		</div>
+	        	</div>
+	            <div class="events-region {[{eventGroup.cssClass}]}" ng-repeat="eventGroup in todayEventGroups" ng-class="{'ss': $parent.eventGroupTab.ss == eventGroup.groupID}">
 	                <i class="fa fa-{[{eventGroup.icon}]} group-icon"></i>
 	                <div class="events-container">
-	                    <div class="event" ng-repeat="newsEvent in eventGroup.events" ng-click="showEvent('today')">
-	                    	
-                            <div class="news-title">
-                                {[{newsEvent.title}]}
-                            </div>
-                            <i class="fa fa-shield icon-tag"></i>
-                            <!--div class="news-detail">
-                            	<div class="cc"></div><div class="color-tag-end"></div>
-                            </div-->
-                            
+	                    <div ng-repeat="newsEvent in eventGroup.events" ng-click="showEvent('today')" event-viewer>
 	                    </div>
 	                </div>
 	            </div>
-	            
 	        </div>
 	    </div>
+
 	</div>
 	<div class="oorti-event" ng-controller="eventCtrl" ng-class="{show:displaySetting.show, full:displaySetting.full}">
 		<div class="event-deep">
@@ -253,16 +246,19 @@
     	}
     	var todayEventGroups = [{
 			'title' : "熱門",
+			'groupID' : 'big',
 			'icon' : "comments-o",
 			'events' : bigEvents,
 			'cssClass' : 'big-event'
 		},{
 			'title' : "最新",
+			'groupID' : 'newest',
 			'icon' : "flash",
 			'events' : newestEvents,
 			'cssClass' : 'newest-event'
 		},{
 			'title' : "推薦",
+			'groupID' : 'recommend',
 			'icon' : "star",
 			'events' : recommendEvents,
 			'cssClass' : 'recommend-event'
@@ -277,10 +273,19 @@
     		"todayEventGroups": todayEventGroups
     	};
     });
+	oortiApp.directive("eventViewer",function() {
+		return {
+			restrict: "A",
+			template: "<div class='event'><div class='news-title'>{[{newsEvent.title}]}</div><i class='fa fa-shield icon-tag'></i></div>",
+			//template: "<div>QQ</div>",
+			link: function(scope, element, attr) {
+
+			}
+		};
+	});
     oortiApp.directive("trendViewer", function() {
         return {
             restrict: "A",
-
             link: function(scope, element, attr) {
             	scope.d3Draw(element[0], fakeD3Data);
             	element[0].addEventListener( "resize", function(){
@@ -289,6 +294,17 @@
             	});
             }
         };
+    });
+    oortiApp.directive("groupTab",function(){
+    	return {
+    		restrict: "A",
+    		link: function(scope, element, attr) {
+    			element.on("click",function(e){
+    				scope.eventGroupTab.ss = scope.eventGroup.groupID;
+    				scope.$apply();
+    			});
+    		}
+    	}
     });
     oortiApp.controller("eventCtrl",function($scope){
     	$scope.displaySetting = {};
@@ -320,12 +336,15 @@
 			$scope.displayMode.left = type;
 			$scope.displayMode.mode = "both";
 		}
+		$scope.showGeneralView = function(){
+			$scope.displayMode.mode = "general";
+			$scope.displayMode.left = "both";
+		};
 		$scope.changeHide = function(){
 			if($scope.displayMode.mode == "both"){
 				$scope.displayMode.mode = "event";
-			}else{
-				$scope.displayMode.mode = "general";
-				$scope.displayMode.left = "both";
+			}else if($scope.displayMode.mode == "event"){
+				$scope.displayMode.mode = "both";
 			}
 		};
 		$scope.changeGeneralView = function(){
@@ -344,7 +363,7 @@
 			}else if(nV == "user"){
 				$scope.displaySetting.userHided = false;
 				$scope.displaySetting.todayHided = true;
-				$scope.displaySetting.todayMin = false;
+				$scope.displaySetting.todayMin = true;
 			}else{
 				$scope.displaySetting.userHided = true;
 				$scope.displaySetting.todayHided = false;
@@ -365,6 +384,12 @@
 		});
 
 		$scope.todayEventGroups = today.todayEventGroups;
+		$scope.eventGroupTab = {};
+		$scope.eventGroupTab.ss = "big";
+
+		$scope.$watch("eventGroupTab.ss", function(nV, oV){
+			console.log(nV);
+		});
 
 		$scope.d3Draw = function(element, data) {
             console.log(element);
@@ -426,7 +451,7 @@
 	          .attr("class", "streamPath")
 	          .attr("d", function (d) {return area(d.values); })
 	          .style("fill", function (d) { return color(d.name); })
-	          .style("stroke", "grey");
+	          //.style("stroke", "grey");
 
 	        // draw axis
 	        svg.append('g')
