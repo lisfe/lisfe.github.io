@@ -2,30 +2,34 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://www.lisfestudio.com/news/2015/03/12/welcome-to-lisfe-studio.html</loc>
-        <lastmod>2015-03-24T16:49:00+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.lisfestudio.com/news/2015/07/02/oorti-flyingV.html</loc>
+        <lastmod>2015-07-10T22:40:20+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/about/</loc>
-        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/news/</loc>
-        <lastmod>2015-04-01T17:58:04+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/blog/</loc>
-        <lastmod>2015-04-01T17:58:04+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/product/</loc>
-        <lastmod>2015-03-19T15:25:26+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/</loc>
-        <lastmod>2015-03-24T16:49:00+08:00</lastmod>
+        <lastmod>2015-07-10T22:40:20+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.lisfestudio.com/css/main.css</loc>
-        <lastmod>2015-04-25T01:12:14+08:00</lastmod>
+        <lastmod>2015-05-02T17:43:27+08:00</lastmod>
     </url>
 </urlset>
