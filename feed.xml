@@ -6,9 +6,53 @@
 </description>
     <link>http://www.lisfestudio.com/</link>
     <atom:link href="http://www.lisfestudio.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Jul 2015 23:21:29 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Jul 2015 23:21:29 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Jul 2015 18:25:24 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Jul 2015 18:25:24 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>OORTI試玩系列（一）事件熱度圖</title>
+        <description>&lt;p&gt;大家好，為了讓大家更了解OORTI，「OORTI試玩系列」現在開始啦！許多視覺化和操作的感受，比起看我們寫的長長的文章，還是直接玩玩看最有感覺了！所以我們將會在這個系列中，讓讀者直接試試OORIT的各種核心特色，大家實際操作過後，若是有什麼想法與建議，歡迎大家到我們的&lt;a href=&quot;https://goo.gl/HzBxO1&quot;&gt;粉絲專頁&lt;/a&gt;，回饋給我們喔！&lt;/p&gt;
+
+&lt;h3&gt;OORTI首頁 一目了然的事件熱度圖&lt;/h3&gt;
+
+&lt;p&gt;首先，就先來一個試玩版體驗一下吧！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://goo.gl/iHcQQK&quot; target=&quot;_blank&quot;&gt;OORTI試玩版（一）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在試玩版（一）中，首先登場的是OORTI首頁使用的事件熱度圖。熱度圖這種視覺化工具，主要用來呈現多個數值隨著時間發展的情況，由左而右，大家可以一眼看到事件隨著時間的發展。圖中不同的色塊代表著不同的事件，而色塊的高度則是事件在當時被討論的熱度（註1）。未來，我們會參考新聞的則數、網路上的熱度和OORTI中大家點閱的情況來計算出事件熱度的指標。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/oorti-demo-1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;帶你用宏觀的視角看新聞&lt;/h3&gt;
+
+&lt;p&gt;透過事件熱度圖來看新聞有什麼好處呢？&lt;/p&gt;
+
+&lt;p&gt;最大的好處是讀者可以先對最近發生了些什麼事有個概念，不會被單一事件大量洗版。以往看新聞常常是被動地看一則則朋友在臉書上的推薦，或者是新聞閱讀器一篇篇的推播通知，昨天看了哪篇新聞，最近有什麼重要事件，大部分的人往往都說不上來。那前幾天的重要新聞如果有了後續報導，卻被今天的突發新聞給掩蓋了怎麼辦呢？通常也就是不了了之了。透過OORTI首頁的熱度圖，你可以清楚掌握這一週的事件如何發展，更知道最近該關心的議題有哪些！&lt;/p&gt;
+
+&lt;p&gt;另外，首頁的事件熱度圖還有一個很大好處是隱藏了新聞的標題。現在的新聞為了賺取點閱率，流行著各種聳動的下標方式。但是，在OORTI首頁的熱度圖上，只會用少量的關鍵字詞來描述事件，讀者可以更依照興趣來選擇事件，盡量不受到標題敘述方式的影響。&lt;/p&gt;
+
+&lt;p&gt;不知道大家覺得OORTI的事件熱度圖好不好用呢？有任何想法或建議歡迎大家來我們的&lt;a href=&quot;https://goo.gl/LWzs4E&quot;&gt;粉絲專頁&lt;/a&gt;討論。下一次的OORTI試玩系列，將會進一步介紹單一事件的閱讀畫面，敬請期待！&lt;/p&gt;
+
+&lt;p&gt;大家覺得OORTI是個有趣好用的工具嗎？現在就快快來flyingV 
+「&lt;a href=&quot;https://goo.gl/JbqQow&quot;&gt;OORTI：換個方式看新聞&lt;/a&gt;」 
+支持我們一下吧！&lt;/p&gt;
+
+&lt;p&gt;LISFE STUDIO&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;註1：OORTI試玩版中的事件熱度僅為示意，並非當時真正的事件熱度。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Jul 2015 16:00:00 +0800</pubDate>
+        <link>http://www.lisfestudio.com/blog/2015/07/13/oorti-demo-1.html</link>
+        <guid isPermaLink="true">http://www.lisfestudio.com/blog/2015/07/13/oorti-demo-1.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>OORTI在FlyingV正式上線了！！</title>
