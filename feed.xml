@@ -6,9 +6,48 @@
 </description>
     <link>http://www.lisfestudio.com/</link>
     <atom:link href="http://www.lisfestudio.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Jul 2015 19:07:53 +0800</pubDate>
-    <lastBuildDate>Thu, 16 Jul 2015 19:07:53 +0800</lastBuildDate>
+    <pubDate>Fri, 17 Jul 2015 19:37:21 +0800</pubDate>
+    <lastBuildDate>Fri, 17 Jul 2015 19:37:21 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>OORTI試玩系列（二）事件新聞</title>
+        <description>&lt;p&gt;在上一篇文章&lt;a href=&quot;http://www.lisfestudio.com/blog/2015/07/13/oortiDemo1.html&quot;&gt;「OORTI試玩系列（一）」&lt;/a&gt;中，我們透過首頁的事件熱度圖，對最近的事件有了一個宏觀的概念。接下來，當我們看到一個有興趣的事件時，要如何深入的了解呢？&lt;/p&gt;
+
+&lt;h3&gt;OORTI事件頁面 完整搜羅各方消息&lt;/h3&gt;
+
+&lt;p&gt;不囉唆，再來一個試玩版吧！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://goo.gl/FUbPgq&quot; target=&quot;_blank&quot;&gt;OORTI試玩版（二）&lt;/a&gt;（目前還是僅適用於電腦版，建議大家用電腦來試玩喔）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/oorti-demo-2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在試玩版（二）中，首先登場的還是事件熱度圖，不過現在可以點選你感興趣的事件了喔！點選進入事件之後，我們會看到許多方格，每個方格都是一則新聞，在這次的試玩版中，每個直排的新聞來自同一個新聞來源，並且按照該新聞來源的先後順序排列。（註1）&lt;/p&gt;
+
+&lt;h3&gt;貨比三家不吃虧！&lt;/h3&gt;
+
+&lt;p&gt;大家應該沒有一次看過這麼多相同事件的新聞吧！平常大家都是透過什麼媒體接收新聞資訊呢？其實第一篇新聞的觀點常常也會影響了我們對事件的想法，透過並列呈現多種不同的新聞來源，我們希望可以讓讀者從不一樣的角度了解事件，獲得更全面的視野。&lt;/p&gt;
+
+&lt;p&gt;其實，OORTI這樣的呈現方式，不只可以讓我們比較新聞的觀點，還有一個附加的效果便是我們可以比較各家媒體的立場和想法，某家媒體是不是只報導某則事件，哪個媒體的立場是不是有所偏頗。透過了解新聞來源的立場，讀者其實可以對事件有更清晰的了解。&lt;/p&gt;
+
+&lt;p&gt;但是，相信大家也有一點這種感覺，這樣散佈著的大量新聞好像不太方便閱讀。這就是為什麼我們需要推薦機制的原因啦！下一次的OORTI試玩系列，將會介紹OORTI的新聞推薦機制，敬請期待！&lt;/p&gt;
+
+&lt;p&gt;大家覺得OORTI是個有趣好用的工具嗎？有任何想法或建議歡迎大家來我們的&lt;a href=&quot;https://goo.gl/LWzs4E&quot;&gt;粉絲專頁&lt;/a&gt;討論。想支持我們嗎？現在就快快來flyingV 「&lt;a href=&quot;https://goo.gl/JbqQow&quot;&gt;OORTI：換個方式看新聞&lt;/a&gt;」贊助我們！ 成為五色早鳥會員後，就可以最先體驗到完整功能的OORTI囉！&lt;/p&gt;
+
+&lt;p&gt;LISFE STUDIO&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;註1：在試玩版（二）中的新聞是為了呈現這個試玩版所收集的資料，並沒有完整收錄該新聞來源的所有新聞，和之後的新聞來源也不會完全相同，在正式版中，我們會持續增加不同的新聞來源。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Jul 2015 19:00:00 +0800</pubDate>
+        <link>http://www.lisfestudio.com/blog/2015/07/17/oorti-demo-2.html</link>
+        <guid isPermaLink="true">http://www.lisfestudio.com/blog/2015/07/17/oorti-demo-2.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>OORTI試玩系列（一）事件熱度圖</title>
