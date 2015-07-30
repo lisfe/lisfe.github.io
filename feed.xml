@@ -6,8 +6,8 @@
 </description>
     <link>http://www.lisfestudio.com/</link>
     <atom:link href="http://www.lisfestudio.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2015 18:20:39 +0800</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2015 18:20:39 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2015 21:04:12 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2015 21:04:12 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -29,6 +29,10 @@
 &lt;p&gt;在OORTI系統當中，只要你讀過的新聞，新聞格子的右下角就會出現小小的評價框，目前OORTI有兩種評價按鈕：「值得一看」和「最佳新聞」。每篇值得看的新聞，你都可以按下「值得一看」來推薦這篇新聞，但是「最佳新聞」在每個事件當中就只能選擇一篇囉！未來，我們還會持續調整和增加評價的方式，想辦法讓最值得看的新聞可以出現在大家眼前！&lt;/p&gt;
 
 &lt;p&gt;「OORTI試玩系列」到這篇就暫時告一段落了！相信大家對於未來OORTI會是什麼樣子有了更清楚的想像，接下來LISFESTUDIO將會全力投入開發新聞事件分類系統，讓OORTI能盡快正式上線！不過，快速好用的OORTI不只需要我們努力精進，還需要大家一起推薦出好新聞，才能有效的運作下去，如果你也覺得OORTI是個好工具，趕快幫我們分享出去吧！&lt;/p&gt;
+
+&lt;div id=&quot;fb-root&quot;&gt;&lt;/div&gt;
+&lt;script&gt;(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = &quot;//connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v2.3&quot;;  fjs.parentNode.insertBefore(js, fjs);}(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));&lt;/script&gt;
+&lt;div class=&quot;fb-post&quot; data-href=&quot;https://www.facebook.com/oorti.lisfestudio/posts/1435763180086464&quot; data-width=&quot;500&quot;&gt;&lt;div class=&quot;fb-xfbml-parse-ignore&quot;&gt;&lt;blockquote cite=&quot;https://www.facebook.com/oorti.lisfestudio/posts/1435763180086464&quot;&gt;&lt;p&gt;&amp;#x8b93;&amp;#x5927;&amp;#x5bb6;&amp;#x4e45;&amp;#x7b49;&amp;#x4e86;&amp;#xff01;OORTI&amp;#x8a66;&amp;#x73a9;&amp;#x7cfb;&amp;#x5217;&amp;#xff08;&amp;#x4e09;&amp;#xff09;&amp;#x4f86;&amp;#x4e86;&amp;#xff01;&amp;#x5728;&amp;#x9019;&amp;#x6b21;&amp;#x7684;&amp;#x8a66;&amp;#x73a9;&amp;#x7248;&amp;#x88e1;&amp;#x9762;OORTI&amp;#x6709;&amp;#x4e86;&amp;#x65b0;&amp;#x7684;&amp;#x6392;&amp;#x5e8f;&amp;#x65b9;&amp;#x5f0f;&amp;#x300c;&amp;#x6642;&amp;#x9593;&amp;#x548c;&amp;#x63a8;&amp;#x85a6;&amp;#x300d;&amp;#xff0c;&amp;#x4e00;&amp;#x8d77;&amp;#x4f86;&amp;#x63a8;&amp;#x85a6;&amp;#x597d;&amp;#x65b0;&amp;#x805e;&amp;#x5427;&amp;#xff01;http://www.lisfestudio.com/blog/2015/07/30/oorti-demo-3.html&lt;/p&gt;Posted by &lt;a href=&quot;https://www.facebook.com/oorti.lisfestudio&quot;&gt;Oorti：換個方式看新聞&lt;/a&gt; on&amp;nbsp;&lt;a href=&quot;https://www.facebook.com/oorti.lisfestudio/posts/1435763180086464&quot;&gt;2015年7月30日&lt;/a&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;想支持我們嗎？快來flyingV 「&lt;a href=&quot;https://goo.gl/JbqQow&quot; target=&quot;_blank&quot; onclick=&quot;ga(‘send’, ‘event’, ‘post-event’, ‘toFlyingv’, ‘demo3′);&quot;&gt;OORTI：換個方式看新聞 &lt;/a&gt;」贊助一下吧！ 成為五色早鳥會員後，就可以最先體驗到完整功能的OORTI囉！&lt;/p&gt;
 
