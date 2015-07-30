@@ -6,9 +6,48 @@
 </description>
     <link>http://www.lisfestudio.com/</link>
     <atom:link href="http://www.lisfestudio.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Jul 2015 19:37:21 +0800</pubDate>
-    <lastBuildDate>Fri, 17 Jul 2015 19:37:21 +0800</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2015 18:20:39 +0800</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2015 18:20:39 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>OORTI試玩系列（三）新聞評價與推薦</title>
+        <description>&lt;p&gt;在上一篇文章&lt;a href=&quot;http://www.lisfestudio.com/blog/2015/07/17/oorti-demo-2.html&quot;&gt;「OORTI試玩系列（二） 事件新聞」&lt;/a&gt;中，我們發現到原來一個事件有這麼多的新聞報導，到底看哪篇比較好呢？這時候就要依靠大家一起推薦出值得看的新聞了！&lt;/p&gt;
+
+&lt;h3&gt;用「時間和推薦」排序 輕鬆看到好新聞&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/oorti-demo-3.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://goo.gl/AuptJg&quot; target=&quot;_blank&quot; onclick=&quot;ga(‘send’, ‘event’, ‘post-event’, ‘toDemo’, ‘demo3′);&quot;&gt;OORTI試玩版（三）&lt;/a&gt;（目前還是僅適用於電腦版，建議大家用電腦來試玩喔）&lt;/p&gt;
+
+&lt;p&gt;在試玩版（三）中，基本的操作還是跟上次相同，不過事件新聞多了一種排序方式囉！將滑鼠移到事件標題後的齒輪上，便可以選擇你喜歡的排序方式，這一次增加的排序方式是「時間和推薦」，畫面中一則則的新聞會先依照時間排列，越往下是越舊的新聞。在同一個時間區間內，越往左則是大家越推薦的新聞（註1）。所以，想多看些最近的新聞，就再往右邊看看，想看看之前發生了什麼事，就往下再查查，是不是很方便呢？&lt;/p&gt;
+
+&lt;h3&gt;OORTI新聞評價系統 快來推薦新聞吧&lt;/h3&gt;
+
+&lt;p&gt;看到別人推薦的新聞，大家一定也想選出自己心中的好新聞吧！&lt;/p&gt;
+
+&lt;p&gt;在OORTI系統當中，只要你讀過的新聞，新聞格子的右下角就會出現小小的評價框，目前OORTI有兩種評價按鈕：「值得一看」和「最佳新聞」。每篇值得看的新聞，你都可以按下「值得一看」來推薦這篇新聞，但是「最佳新聞」在每個事件當中就只能選擇一篇囉！未來，我們還會持續調整和增加評價的方式，想辦法讓最值得看的新聞可以出現在大家眼前！&lt;/p&gt;
+
+&lt;p&gt;「OORTI試玩系列」到這篇就暫時告一段落了！相信大家對於未來OORTI會是什麼樣子有了更清楚的想像，接下來LISFESTUDIO將會全力投入開發新聞事件分類系統，讓OORTI能盡快正式上線！不過，快速好用的OORTI不只需要我們努力精進，還需要大家一起推薦出好新聞，才能有效的運作下去，如果你也覺得OORTI是個好工具，趕快幫我們分享出去吧！&lt;/p&gt;
+
+&lt;p&gt;想支持我們嗎？快來flyingV 「&lt;a href=&quot;https://goo.gl/JbqQow&quot; target=&quot;_blank&quot; onclick=&quot;ga(‘send’, ‘event’, ‘post-event’, ‘toFlyingv’, ‘demo3′);&quot;&gt;OORTI：換個方式看新聞 &lt;/a&gt;」贊助一下吧！ 成為五色早鳥會員後，就可以最先體驗到完整功能的OORTI囉！&lt;/p&gt;
+
+&lt;p&gt;有任何想法或建議歡迎大家來我們的&lt;a href=&quot;https://goo.gl/LWzs4E&quot; target=&quot;_blank&quot; onclick=&quot;ga(‘send’, ‘event’, ‘post-event’, toFB, ‘demo3′);&quot;&gt;粉絲專頁&lt;/a&gt;和大家一起討論！&lt;/p&gt;
+
+&lt;p&gt;LISFE STUDIO&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;註1：在試玩版（三）中，延續使用試玩版（二）的資料，但是目前還沒有新聞的推薦程度資訊，所以在「推薦程度」的維度也先暫時依照時間排序。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2015 17:00:00 +0800</pubDate>
+        <link>http://www.lisfestudio.com/blog/2015/07/30/oorti-demo-3.html</link>
+        <guid isPermaLink="true">http://www.lisfestudio.com/blog/2015/07/30/oorti-demo-3.html</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
     
       <item>
         <title>OORTI試玩系列（二）事件新聞</title>
